@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://localhost');
+    socket.on('update_map', (driver_data) => {
+    });
+
+    function handleChange(checkbox) {
+      if (checkbox.checked == true) {
+        navigator.geolocation.watchPosition(function(position) {
+          longitude = position.coords.longitude;
+          latitude = position.coords.latitude;
+          socket.emit('update_driver_location', {
+            longitude: position.coords.longitude,
+            latitude: position.coords.latitude,
+            id: "some_id"
+          });
+        });
+      } else {
+
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" onchange='handleChange(this);'>Location on</br>
+  <form action="/driverOnline" method="post">
+    <input type="text" name="id"><br/>
+    <input type="submit"><label>Go Online</label>
+  </form>
+  <form action="/driverOffline" method="post">
+    <input type="text" name="id"><br/>
+    <input type="submit"><label>Go Offline</label>
+  </form>
+</body>
+
+</html>
