@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-
 let drivers = {
   "some_id": {
     name: "Alpha Tester",
@@ -25,6 +24,7 @@ io.on('connection', (socket) => {
     const {id, longitude, latitude} = driver_data;
     drivers[id].longitude = longitude;
     drivers[id].latitude = latitude;
+    console.log('drivers[id] =', JSON.stringify(drivers[id], null, 3));
     io.sockets.emit('update_map', drivers[id]);
   })
 })
@@ -80,9 +80,7 @@ app.post('/driverOffline', (req, res) => {
   }
 })
 
-app.get('/test', (req, res) => {
-
-})
+app.get('/test', (req, res) => {})
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
