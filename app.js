@@ -21,6 +21,7 @@ let jobs = [];
 
 io.on('connection', (socket) => {
   socket.on('update_driver_location', (driver_data) => {
+    console.log('in update_driver_location');
     const {id, longitude, latitude} = driver_data;
     drivers[id].longitude = longitude;
     drivers[id].latitude = latitude;
