@@ -3,3 +3,4 @@ An application developed for the free ridesharing service in College Station/Bry
 
 ## Developers (in alphabetical order)
 Gabriel Britain
+Suvedh Srikanth
