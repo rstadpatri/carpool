@@ -1,0 +1,22 @@
+{
+  "name": "carpool",
+  "version": "0.0.1",
+  "description": "An application developed for the free ridesharing service in College Station/Bryan.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aggie-coding-club/carpool.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aggie-coding-club/carpool/issues"
+  },
+  "homepage": "https://github.com/aggie-coding-club/carpool#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
