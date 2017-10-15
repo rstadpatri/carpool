@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
-let i = 0;
+
 app.get('/', function(req, res) {
     res.send('Hello world!');
+});
+
+app.post('/driverOnline', function(req, res) {
+        //#TODO//
 });
 
 app.listen(80, function()   {
